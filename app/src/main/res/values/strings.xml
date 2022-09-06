@@ -11,4 +11,29 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string-array name="categoryBillsToPay">
+        <item>Despesas Da Pintura</item>
+        <item>Energia</item>
+        <item>Funcionário</item>
+        <item>Material</item>
+        <item>Frete da Mercadoria</item>
+        <item>Empréstimo</item>
+        <item>Investimento</item>
+        <item>Cartão de Crédito</item>
+        <item>Fornecedor</item>
+        <item>Laser 1</item>
+        <item>Laser 2</item>
+        <item>Marcenaria</item>
+    </string-array>
+
+    <string-array name="categoryBillsToRecive">
+        <item>Vendas em cartão</item>
+        <item>Vendas em dinheiro</item>
+        <item>Venas a prazo</item>
+
+    </string-array>
+
+
 </resources>

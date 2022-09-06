@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import com.example.appartemadeira.Fragments.BillsToPayFragment
 import com.example.appartemadeira.Fragments.BillsToReceiveFragment
@@ -15,14 +16,13 @@ class FinanceActivity : AppCompatActivity() {
 
   
     private lateinit var binding: ActivityFinanceBinding
+    private lateinit var toolbar: Toolbar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityFinanceBinding.inflate(layoutInflater)
-        val toolbar = binding.include.toolbarPrincipal
         setContentView(binding.root)
-        toolbar.title = "Finanças"
-        setSupportActionBar(toolbar)
+        toolbarConfiguration()
         replaceFragment(BillsToPayFragment())
 
 
@@ -46,6 +46,12 @@ class FinanceActivity : AppCompatActivity() {
         val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.replace(R.id.viewPager,fragment)
         fragmentTransaction.commit()
+
+    }
+    private fun toolbarConfiguration(){
+        toolbar = binding.include.toolbarPrincipal
+        toolbar.title = "Finanças"
+        setSupportActionBar(toolbar)
 
     }
 
