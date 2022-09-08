@@ -107,6 +107,7 @@
             app:helperText="Obrigatorio*"
             app:helperTextTextColor="@color/red_logo"
             app:startIconDrawable="@drawable/ic_category_24"
+            android:enabled="false"
             >
             <AutoCompleteTextView
                 android:id="@+id/autoCompleteText"
@@ -114,6 +115,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="none"
                 android:hint="Categoria"
+
                 />
 
         </com.google.android.material.textfield.TextInputLayout>

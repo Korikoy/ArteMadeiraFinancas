@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "761000209232",
+    "project_id": "artemadeirafinancas",
+    "storage_bucket": "artemadeirafinancas.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:761000209232:android:0047e72d81c003dc1d9a55",
+        "android_client_info": {
+          "package_name": "com.example.appartemadeira"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "761000209232-29vcdribnthn7gcmcqevv15lkmt8boqq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.appartemadeira",
+            "certificate_hash": "a2e3a5fbd84a73018358e65e5ffa9795e8a0300c"
+          }
+        },
+        {
+          "client_id": "761000209232-tvdk06f267b037219kag7qv1l4svfhdf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXRxkpq-0ZRjixyrBs1vd6sBvojgVPTyM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "761000209232-tvdk06f267b037219kag7qv1l4svfhdf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
