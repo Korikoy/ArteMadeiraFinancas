@@ -1,4 +1,4 @@
-package com.example.appartemadeira.activity
+package com.example.appartemadeira.mvvm.presentation.register
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -8,7 +8,8 @@ import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import com.example.appartemadeira.R
 import com.example.appartemadeira.databinding.ActivityResisterBinding
-import com.example.appartemadeira.model.Bills
+import com.example.appartemadeira.mvvm.data.finance.model.Bills
+import com.example.appartemadeira.mvvm.presentation.finance.FinanceActivity
 
 class RegisterActivity : AppCompatActivity() {
     private lateinit var binding: ActivityResisterBinding

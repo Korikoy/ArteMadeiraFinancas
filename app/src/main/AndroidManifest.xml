@@ -3,6 +3,7 @@
     package="com.example.appartemadeira">
 
     <application
+        android:name=".mvvm.FinanceApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -10,18 +11,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppArteMadeira">
         <activity
-            android:name=".activity.MainActivity"
+            android:name=".mvvm.presentation.register.RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.RegisterActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activity.FinanceActivity"
+            android:name=".mvvm.presentation.finance.FinanceActivity"
             android:exported="false"
             android:label="@string/title_activity_finance"
             android:theme="@style/Theme.AppArteMadeira.NoActionBar" />
         <activity
-            android:name=".activity.SplashActivity"
+            android:name=".mvvm.presentation.splash.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
