@@ -3,12 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/PC/AndroidStudioProjects/AppArteMadeira/app/src/main/res/drawable/background_button.xml" value="0.2175" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/AppArteMadeira/app/src/main/res/drawable/background_red.xml" value="0.2175" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/AppArteMadeira/app/src/main/res/drawable/division.xml" value="0.2175" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/AppArteMadeira/app/src/main/res/drawable/ic_add_white.xml" value="0.2175" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/AppArteMadeira/app/src/main/res/drawable/ic_splash_bg.xml" value="0.2175" />
-        <entry key="..\:/Users/PC/AndroidStudioProjects/AppArteMadeira/app/src/main/res/layout/activity_finance.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/AppArteMadeira/app/src/main/res/layout/activity_finance.xml" value="0.33" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/AppArteMadeira/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/AppArteMadeira/app/src/main/res/layout/activity_resister.xml" value="0.33" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/AppArteMadeira/app/src/main/res/layout/activity_splash.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/AppArteMadeira/app/src/main/res/layout/adapter_bills.xml" value="0.33" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/AppArteMadeira/app/src/main/res/layout/content_finance.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/AppArteMadeira/app/src/main/res/layout/division.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/AppArteMadeira/app/src/main/res/layout/dropdonw_item.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/AppArteMadeira/app/src/main/res/layout/fragment_bills_to_pay.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/AppArteMadeira/app/src/main/res/layout/fragment_bills_to_receive.xml" value="0.35260416666666666" />

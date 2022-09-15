@@ -1,5 +1,6 @@
 package com.example.appartemadeira.activity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
@@ -31,6 +32,9 @@ class RegisterActivity : AppCompatActivity() {
         }
         binding.buttonAdd.setOnClickListener {
             registerBills()
+            val i: Intent = Intent(this, FinanceActivity::class.java)
+            startActivity(i)
+            finish()
         }
 
 

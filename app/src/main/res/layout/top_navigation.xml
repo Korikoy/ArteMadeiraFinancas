@@ -10,9 +10,8 @@
     app:menu="@menu/menu_top_nav"
     app:itemIconTint="@color/black"
     app:itemTextColor="@android:color/black"
-    android:layout_gravity="top"
+    android:layout_gravity="bottom"
     app:labelVisibilityMode="auto"
     app:itemHorizontalTranslationEnabled="false"
-
 
     />

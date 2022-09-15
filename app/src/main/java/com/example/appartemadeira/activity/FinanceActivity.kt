@@ -22,17 +22,18 @@ class FinanceActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityFinanceBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        binding.bottomNaviView.background = null
+        binding.bottomNaviView.menu.getItem(1).isEnabled = false
         toolbarConfiguration()
-        replaceFragment(BillsToPayFragment())
-
-
+        replaceFragment(BillsToReceiveFragment())
 
 
         binding.fab.setOnClickListener { view ->
             val i: Intent = Intent(this, RegisterActivity::class.java)
             startActivity(i)
+            finish()
         }
-        binding.include2.topNavView.setOnItemSelectedListener{
+        binding.bottomNaviView.setOnItemSelectedListener{
             when(it.itemId){
                 R.id.ic_financeBills -> replaceFragment(BillsToPayFragment())
                 R.id.ic_financeCash -> replaceFragment(BillsToReceiveFragment())
@@ -44,7 +45,7 @@ class FinanceActivity : AppCompatActivity() {
     private fun replaceFragment(fragment: Fragment){
         val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.viewPager,fragment)
+        fragmentTransaction.replace(R.id.frameFragment,fragment)
         fragmentTransaction.commit()
 
     }
@@ -54,6 +55,7 @@ class FinanceActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
     }
+
 
 
 

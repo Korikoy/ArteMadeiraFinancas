@@ -4,35 +4,51 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.FinanceActivity"
     android:orientation="vertical">
 
     <include
         android:id="@+id/include"
         layout="@layout/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="?attr/actionBarSize" />
 
-    <include
-        android:id="@+id/include2"
-        layout="@layout/top_navigation"
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/cordinateLayout"
         android:layout_width="match_parent"
-        android:layout_height="56dp" />
+        android:layout_height="match_parent">
 
-    <FrameLayout
-        android:id="@+id/viewPager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1" >
+        <FrameLayout
+            android:id="@+id/frameFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="70dp"/>
+
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/bottomAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            app:fabCradleMargin="20dp"
+            app:fabCradleRoundedCornerRadius="20dp">
+
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/bottomNaviView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="16dp"
+                android:background="@android:color/transparent"
+                app:menu="@menu/menu_top_nav" />
+        </com.google.android.material.bottomappbar.BottomAppBar>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
-            android:layout_marginEnd="@dimen/fab_margin"
-            android:layout_marginBottom="16dp"
-            app:srcCompat="@drawable/ic_add_white" />
-    </FrameLayout>
+            android:src="@drawable/ic_add_white"
+            app:layout_anchor="@id/bottomAppBar" />
 
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </LinearLayout>
+
