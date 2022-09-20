@@ -39,35 +39,6 @@ class Bills(
         private const val TAG = "User"
     }
 
-
-    @Exclude
-    fun save() {
-        val db = Firebase.firestore
-        if (type == "Contas a pagar") {
-            db.collection("BillsToPay").add(map())
-                .addOnCompleteListener { task ->
-                    Log.i("user", "sucesso")
-                    bid = task.result.id
-                    atualize()
-
-                }.addOnFailureListener { e ->
-                    Log.i("user", "falha")
-                }
-        } else {
-            db.collection("BillsToRecive").add(map())
-                .addOnCompleteListener { task ->
-                    Log.i("user", "sucesso")
-                    bid = task.result.id
-                    atualize()
-
-
-                }.addOnFailureListener { e ->
-                    Log.i("user", "falha")
-                }
-
-        }
-    }
-
     @Exclude
     fun map(): HashMap<String, Any> {
         val usermap: HashMap<String, Any> = HashMap()
@@ -105,9 +76,17 @@ class Bills(
                     Log.i("user", "falha")
 
                 }
-
-
         }
+    }
 
+    @Exclude
+    fun delete() {
+        val db = Firebase.firestore
+        if (type == "Contas a pagar") {
+            db.collection("BillsToPay").document(bid).delete()
+
+        } else {
+            db.collection("BillsToRecive").document(bid).delete()
+        }
     }
 }

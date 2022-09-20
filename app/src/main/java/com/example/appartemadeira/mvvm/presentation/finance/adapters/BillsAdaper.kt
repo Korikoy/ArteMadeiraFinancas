@@ -11,11 +11,10 @@ class BillsAdaper(
 ) : RecyclerView.Adapter<BillsAdaper.MyViewHolder>() {
     private val bills = listBills
 
+
     inner class
     MyViewHolder(val binding: AdapterBillsBinding) :
         RecyclerView.ViewHolder(binding.root) {
-
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
@@ -26,10 +25,10 @@ class BillsAdaper(
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val bills: Bills = bills[position]
-        holder.binding.textNameBills.text = bills.name.toString()
-        holder.binding.textViewCategory.text = bills.category.toString()
-        holder.binding.textViewMoney.text = bills.valor.toString()
-        holder.binding.textStatus.text = bills.status.toString()
+        holder.binding.textNameBills.text = bills.name
+        holder.binding.textViewCategory.text = bills.category
+        holder.binding.textViewMoney.text = bills.valor
+        holder.binding.textStatus.text = bills.status
         if (bills.description == null) {
             holder.binding.textViewDescription.text = ""
         } else {
@@ -49,8 +48,9 @@ class BillsAdaper(
             }
 
         }
-
-
+        holder.binding.deleteButton.setOnClickListener {
+            bills.delete()
+        }
     }
 
     override fun getItemCount(): Int {
