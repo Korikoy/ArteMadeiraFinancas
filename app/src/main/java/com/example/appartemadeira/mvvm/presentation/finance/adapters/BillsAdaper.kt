@@ -39,10 +39,10 @@ class BillsAdaper(
         holder.binding.switchStats.setOnCheckedChangeListener { _, b ->
             if (b) {
                 bills.status = "Pago"
-                holder.binding.textStatus.setText("Pago")
+                holder.binding.textStatus.text = "Pago"
                 bills.atualize()
             } else {
-                holder.binding.textStatus.setText("Pendente")
+                holder.binding.textStatus.text = "Pendente"
                 bills.status = "Pendente"
                 bills.atualize()
             }

@@ -22,5 +22,11 @@ class FinanceViewModel(
     fun getBillsToReceive() {
         viewModelScope.launch { billsToReceiveLiveData.value = financeBusiness.getBillsToReceive() }
     }
+    fun atualizeBills(bills: Bills){
+        financeBusiness.atualizeBills(bills)
+    }
+    fun deleteBills(bills: Bills){
+        financeBusiness.deleteBills(bills)
 
+    }
 }
