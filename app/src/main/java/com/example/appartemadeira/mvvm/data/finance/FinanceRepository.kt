@@ -32,5 +32,7 @@ class FinanceRepository(
     }
     fun deleteBills(bills: Bills, typeBills:String){
                 db.collection(typeBills).document(bills.bid).delete()
+
+
     }
 }

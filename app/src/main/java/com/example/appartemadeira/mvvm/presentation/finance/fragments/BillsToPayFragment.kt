@@ -11,7 +11,7 @@ import com.example.appartemadeira.mvvm.presentation.finance.adapters.BillsAdapte
 import com.example.appartemadeira.mvvm.presentation.finance.viewmodel.FinanceViewModel
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
-class BillsToPayFragment : Fragment(), BillsAdapter.OnDeleteClickButton {
+class BillsToPayFragment : Fragment(), BillsAdapter.OnDeleteClickButton, BillsAdapter.OnSwitchClickButton {
     private lateinit var binding: FragmentBillsToPayBinding
     private val vm by sharedViewModel<FinanceViewModel>()
 
@@ -29,11 +29,16 @@ class BillsToPayFragment : Fragment(), BillsAdapter.OnDeleteClickButton {
         binding.recycleBills.setHasFixedSize(true)
 
         vm.billsToPayLiveData.observe(requireActivity()) {
-            binding.recycleBills.adapter = BillsAdapter(it,this)
+            binding.recycleBills.adapter = BillsAdapter(it,this,this)
         }
     }
 
     override fun onClick(bills: Bills) {
         vm.deleteBills(bills)
+
+    }
+
+    override fun onSwitch(bills: Bills) {
+        vm.updateBills(bills)
     }
 }

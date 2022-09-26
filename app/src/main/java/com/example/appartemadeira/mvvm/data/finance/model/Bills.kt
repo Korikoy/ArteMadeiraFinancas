@@ -53,40 +53,4 @@ class Bills(
         return usermap
 
     }
-
-    @Exclude
-    fun atualize() {
-        val db = Firebase.firestore
-        if (type == "Contas a pagar") {
-            db.collection("BillsToPay").document(bid).update(map())
-                .addOnCompleteListener { task ->
-                    Log.i("user", "sucesso")
-
-
-                }.addOnFailureListener { e ->
-                    Log.i("user", "falha")
-                }
-        } else {
-            db.collection("BillsToRecive").document(bid).update(map())
-                .addOnCompleteListener { task ->
-                    Log.i("user", "sucesso")
-
-
-                }.addOnFailureListener { e ->
-                    Log.i("user", "falha")
-
-                }
-        }
-    }
-
-    @Exclude
-    fun delete() {
-        val db = Firebase.firestore
-        if (type == "Contas a pagar") {
-            db.collection("BillsToPay").document(bid).delete()
-
-        } else {
-            db.collection("BillsToRecive").document(bid).delete()
-        }
-    }
 }

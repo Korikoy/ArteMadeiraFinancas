@@ -6,11 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.appartemadeira.databinding.FragmentBillsToReceiveBinding
+import com.example.appartemadeira.mvvm.data.finance.model.Bills
 import com.example.appartemadeira.mvvm.presentation.finance.adapters.BillsAdapter
 import com.example.appartemadeira.mvvm.presentation.finance.viewmodel.FinanceViewModel
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
-class BillsToReceiveFragment : Fragment() {
+class BillsToReceiveFragment : Fragment(),BillsAdapter.OnDeleteClickButton, BillsAdapter.OnSwitchClickButton {
     private lateinit var binding: FragmentBillsToReceiveBinding
     private val vm by sharedViewModel<FinanceViewModel>()
 
@@ -28,7 +29,16 @@ class BillsToReceiveFragment : Fragment() {
         binding.recycleBills2.setHasFixedSize(true)
 
         vm.billsToReceiveLiveData.observe(requireActivity()) {
-            binding.recycleBills2.adapter = BillsAdapter(it)
+            binding.recycleBills2.adapter = BillsAdapter(it,this,this)
         }
+    }
+
+    override fun onClick(bills: Bills) {
+        vm.deleteBills(bills)
+        binding.recycleBills2.adapter?.notifyDataSetChanged()
+    }
+
+    override fun onSwitch(bills: Bills) {
+        vm.updateBills(bills)
     }
 }

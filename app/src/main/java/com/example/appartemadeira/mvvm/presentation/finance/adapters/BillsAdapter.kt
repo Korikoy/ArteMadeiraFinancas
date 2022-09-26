@@ -8,7 +8,8 @@ import com.example.appartemadeira.mvvm.data.finance.model.Bills
 
 class BillsAdapter(
     listBills: List<Bills>,
-    private val onDeleteClickButton: OnDeleteClickButton
+    private val onDeleteClickButton: OnDeleteClickButton,
+    private val onSwitchClickButton: OnSwitchClickButton
 ) : RecyclerView.Adapter<BillsAdapter.MyViewHolder>() {
     private val bills = listBills
 
@@ -41,11 +42,11 @@ class BillsAdapter(
             if (clicked) {
                 bills.status = "Pago"
                 holder.binding.textStatus.text = "Pago"
-                bills.atualize()
+                onSwitchClickButton.onSwitch(bills)
             } else {
                 holder.binding.textStatus.text = "Pendente"
                 bills.status = "Pendente"
-                bills.atualize()
+                onSwitchClickButton.onSwitch(bills)
             }
         }
 
@@ -64,6 +65,9 @@ class BillsAdapter(
 
     interface OnDeleteClickButton {
         fun onClick(bills: Bills)
+    }
+    interface OnSwitchClickButton {
+        fun onSwitch(bills: Bills)
     }
 
 }
