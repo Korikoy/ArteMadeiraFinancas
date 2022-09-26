@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.appartemadeira.databinding.FragmentBillsToReceiveBinding
-import com.example.appartemadeira.mvvm.presentation.finance.adapters.BillsAdaper
+import com.example.appartemadeira.mvvm.presentation.finance.adapters.BillsAdapter
 import com.example.appartemadeira.mvvm.presentation.finance.viewmodel.FinanceViewModel
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
@@ -28,7 +28,7 @@ class BillsToReceiveFragment : Fragment() {
         binding.recycleBills2.setHasFixedSize(true)
 
         vm.billsToReceiveLiveData.observe(requireActivity()) {
-            binding.recycleBills2.adapter = BillsAdaper(it)
+            binding.recycleBills2.adapter = BillsAdapter(it)
         }
     }
 }

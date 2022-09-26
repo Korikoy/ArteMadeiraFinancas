@@ -15,18 +15,18 @@ class FinanceBusiness(
         return financeRepository.getBills("BillsToRecive")
     }
      fun deleteBills(bills: Bills){
-        if(bills.type == "Contas a pagar"){
-        financeRepository.deleteBills(bills,"BillsToPay")
-        }else{
-            financeRepository.deleteBills(bills,"BillsToRecive")
-        }
+         if (bills.type == "Contas a pagar") {
+             financeRepository.deleteBills(bills, "BillsToPay")
+         } else {
+             financeRepository.deleteBills(bills, "BillsToRecive")
+         }
 
     }
-    fun atualizeBills(bills: Bills){
-        if(bills.type == "Contas a pagar"){
-            financeRepository.atualizeBills(bills,"BillsToPay")
-        }else{
-            financeRepository.atualizeBills(bills,"BillsToRecive")
+    fun updateBills(bills: Bills){
+        if (bills.type == "Contas a pagar") {
+            financeRepository.updateBills(bills, "BillsToPay")
+        } else {
+            financeRepository.updateBills(bills, "BillsToRecive")
         }
     }
 }

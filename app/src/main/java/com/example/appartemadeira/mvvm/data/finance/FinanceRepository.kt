@@ -21,7 +21,7 @@ class FinanceRepository(
         }
         return billsList
     }
-    fun atualizeBills(bills: Bills,typeBills:String) {
+    fun updateBills(bills: Bills, typeBills:String) {
         db.collection(typeBills).document(bills.bid).update(bills.map())
             .addOnCompleteListener { task ->
                 Log.i("user", "sucesso")

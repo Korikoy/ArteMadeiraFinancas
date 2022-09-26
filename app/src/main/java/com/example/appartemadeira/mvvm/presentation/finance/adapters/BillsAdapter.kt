@@ -6,9 +6,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.appartemadeira.databinding.AdapterBillsBinding
 import com.example.appartemadeira.mvvm.data.finance.model.Bills
 
-class BillsAdaper(
-    listBills: List<Bills>
-) : RecyclerView.Adapter<BillsAdaper.MyViewHolder>() {
+class BillsAdapter(
+    listBills: List<Bills>,
+    private val onDeleteClickButton: OnDeleteClickButton
+) : RecyclerView.Adapter<BillsAdapter.MyViewHolder>() {
     private val bills = listBills
 
 
@@ -36,8 +37,8 @@ class BillsAdaper(
         }
         holder.binding.switchStats.isChecked = bills.status == "Pago"
 
-        holder.binding.switchStats.setOnCheckedChangeListener { _, b ->
-            if (b) {
+        holder.binding.switchStats.setOnCheckedChangeListener { _, clicked ->
+            if (clicked) {
                 bills.status = "Pago"
                 holder.binding.textStatus.text = "Pago"
                 bills.atualize()
@@ -46,10 +47,10 @@ class BillsAdaper(
                 bills.status = "Pendente"
                 bills.atualize()
             }
-
         }
+
         holder.binding.deleteButton.setOnClickListener {
-            bills.delete()
+            onDeleteClickButton.onClick(bills)
         }
     }
 
@@ -59,6 +60,10 @@ class BillsAdaper(
 
     override fun getItemId(position: Int): Long {
         return super.getItemId(position)
+    }
+
+    interface OnDeleteClickButton {
+        fun onClick(bills: Bills)
     }
 
 }
