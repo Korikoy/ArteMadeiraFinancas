@@ -8,7 +8,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="vertical"
         tools:context=".mvvm.presentation.register.RegisterActivity">
@@ -33,7 +33,7 @@
             android:layout_marginTop="32dp"
             android:layout_marginEnd="50dp"
             android:layout_marginBottom="16dp"
-            android:text="Adicionar"
+            android:text="@string/add"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
@@ -60,9 +60,11 @@
                 android:id="@+id/editTextName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Nome"
+                android:hint="@string/name"
                 android:inputType="text"
-                android:textStyle="bold" />
+                android:textColorHint="#78909C"
+                android:textStyle="bold"
+                tools:ignore="TextContrastCheck" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <RadioGroup
@@ -83,13 +85,13 @@
                 android:id="@+id/radioButtonBillsToPay"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Contas a pagar" />
+                android:text="@string/billsToPay" />
 
             <RadioButton
                 android:id="@+id/radioButtonBillsToRecive"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Contas a Receber" />
+                android:text="@string/billsToRecive" />
 
         </RadioGroup>
 
@@ -101,20 +103,20 @@
             android:layout_marginStart="24dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="24dp"
+            android:enabled="false"
+            app:helperText="Obrigatorio*"
+            app:helperTextTextColor="@color/red_logo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/radioGroup2"
-            app:helperText="Obrigatorio*"
-            app:helperTextTextColor="@color/red_logo"
-            app:startIconDrawable="@drawable/ic_category_24"
-            android:enabled="false"
-            >
+            app:startIconDrawable="@drawable/ic_category_24">
+
             <AutoCompleteTextView
                 android:id="@+id/autoCompleteText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:hint="@string/category"
                 android:inputType="none"
-                android:hint="Categoria"
 
                 />
 
@@ -128,20 +130,22 @@
             android:layout_marginStart="24dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="24dp"
+            app:helperText="Obrigatorio*"
+            app:helperTextTextColor="@color/red_logo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textInputLayoutCategory"
-            app:helperText="Obrigatorio*"
-            app:helperTextTextColor="@color/red_logo"
             app:startIconDrawable="@drawable/ic_money_24">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editTextCash"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Valor"
+                android:hint="@string/value"
                 android:inputType="numberDecimal"
-                android:textStyle="bold" />
+                android:textColorHint="#78909C"
+                android:textStyle="bold"
+                tools:ignore="TextContrastCheck,TextContrastCheck,TextContrastCheck" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -152,18 +156,20 @@
             android:layout_marginStart="24dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="24dp"
+            app:helperText="Opicional"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textInputLayoutCash"
-            app:helperText="Opicional"
             app:startIconDrawable="@drawable/ic_description_24">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editTextDescrip"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Descrição"
-                android:textStyle="bold" />
+                android:hint="@string/description"
+                android:textColorHint="#78909C"
+                android:textStyle="bold"
+                tools:ignore="TextContrastCheck" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
@@ -171,7 +177,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Tipo"
+            android:text="@string/Type"
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"

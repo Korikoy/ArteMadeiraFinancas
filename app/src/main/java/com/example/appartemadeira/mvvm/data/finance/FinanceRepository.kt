@@ -4,13 +4,12 @@ import android.util.Log
 import com.example.appartemadeira.mvvm.data.finance.model.Bills
 import com.example.appartemadeira.mvvm.data.finance.model.Bills.Companion.toBills
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.tasks.await
 
 class FinanceRepository(
     private val db: FirebaseFirestore
 ) {
+
 
     suspend fun getBills(collectionPath: String): MutableList<Bills> {
         val query = db.collection(collectionPath).get().await()
@@ -31,8 +30,10 @@ class FinanceRepository(
             }
     }
     fun deleteBills(bills: Bills, typeBills:String){
-                db.collection(typeBills).document(bills.bid).delete()
-
-
+        db.collection(typeBills).document(bills.bid).delete()
     }
+
+
+
+
 }

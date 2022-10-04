@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
-import androidx.lifecycle.ViewModelProvider
 import com.example.appartemadeira.R
 import com.example.appartemadeira.databinding.ActivityResisterBinding
 import com.example.appartemadeira.mvvm.data.finance.model.Bills
@@ -35,7 +34,7 @@ class RegisterActivity : AppCompatActivity() {
             } else {
                 "Contas a pagar"
             }
-            val valor = binding.editTextCash.text.toString()
+            val valor = binding.editTextCash.text.toString().toDouble()
             val description: String? = binding.editTextDescrip.text?.toString()
             val bills = Bills(name, type,category,valor,description)
             vm.saveBills(bills)

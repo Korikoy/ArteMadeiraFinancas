@@ -1,17 +1,14 @@
 package com.example.appartemadeira.mvvm.data.finance.model
 
-import android.util.Log
 import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.Exclude
-import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.ktx.Firebase
 import java.io.Serializable
 
 class Bills(
     var name: String = "",
     var type: String = "",
     var category: String = "",
-    var valor: String = "",
+    var valor: Double = 0.00,
     var description: String? = "",
     var bid: String = "",
     var status: String = "Pendente"
@@ -24,7 +21,7 @@ class Bills(
                 val name = getString("name")!!
                 val type = getString("type")!!
                 val category = getString("category")!!
-                val valor = getString("valor")!!
+                val valor = getDouble("valor")!!
                 val description = getString("description")!!
                 val bid = getString("bid")!!
                 val status = getString("status")!!
@@ -53,4 +50,5 @@ class Bills(
         return usermap
 
     }
+
 }

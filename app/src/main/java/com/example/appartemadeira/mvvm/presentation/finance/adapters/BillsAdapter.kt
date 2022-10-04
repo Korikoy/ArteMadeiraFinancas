@@ -29,7 +29,7 @@ class BillsAdapter(
         val bills: Bills = bills[position]
         holder.binding.textNameBills.text = bills.name
         holder.binding.textViewCategory.text = bills.category
-        holder.binding.textViewMoney.text = bills.valor
+        holder.binding.textViewMoney.text = bills.valor.toString()
         holder.binding.textStatus.text = bills.status
         if (bills.description == null) {
             holder.binding.textViewDescription.text = ""

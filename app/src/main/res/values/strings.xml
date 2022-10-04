@@ -12,6 +12,26 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_finance">Finanças</string>
+    <string name="pay">Pagar:</string>
+    <string name="recive">Receber:</string>
+    <string name="title">Title</string>
+    <string name="category">Categoria:</string>
+    <string name="categoryFild">Category Fild</string>
+    <string name="valorFild">Valor Fild</string>
+    <string name="value">Valor:</string>
+    <string name="status">Status:</string>
+    <string name="pending">Pendente</string>
+    <string name="description">Descriçao:</string>
+    <string name="descriptionFild">Description Fild</string>
+    <string name="delete">Delete</string>
+    <string name="paySwitch">Pago</string>
+    <string name="todo2">TODO</string>
+    <string name="add">Adicionar</string>
+    <string name="name">Nome</string>
+    <string name="billsToPay">Contas a pagar</string>
+    <string name="billsToRecive">Contas a Receber</string>
+    <string name="Type">Tipo</string>
+    <string name="todo">TODO</string>
 
 
     <string-array name="categoryBillsToPay">

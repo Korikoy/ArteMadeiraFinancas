@@ -35,7 +35,7 @@ class BillsToReceiveFragment : Fragment(),BillsAdapter.OnDeleteClickButton, Bill
 
     override fun onClick(bills: Bills) {
         vm.deleteBills(bills)
-        binding.recycleBills2.adapter?.notifyDataSetChanged()
+
     }
 
     override fun onSwitch(bills: Bills) {

@@ -27,6 +27,22 @@ class FinanceActivity : AppCompatActivity() {
         setContentView(binding.root)
         init()
         replaceFragment(BillsToReceiveFragment())
+        vm.getValueToPay()
+        vm.billsToPayLiveData.observe(this){
+            vm.getValueToPay()
+        }
+        vm.valueBillsToPay.observe(this){
+            binding.textViewPay.text = "Valor a Pagar: $it"
+        }
+        vm.getValueToRecive()
+        vm.billsToReceiveLiveData.observe(this){
+            vm.getValueToRecive()
+        }
+        vm.valueBillsToRecive.observe(this){
+            binding.textViewRecive.text = "Valor a Receber: $it"
+        }
+
+
     }
 
     private fun replaceFragment(fragment: Fragment) {

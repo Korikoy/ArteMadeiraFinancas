@@ -29,4 +29,22 @@ class FinanceBusiness(
             financeRepository.updateBills(bills, "BillsToRecive")
         }
     }
+    suspend fun getValueToPay(): Double{
+        val list = financeRepository.getBills("BillsToPay")
+        var value = 0.0
+        for(bills: Bills in list){
+            value += bills.valor
+        }
+        return value
+    }
+    suspend fun getValueToRecive(): Double{
+        val list = financeRepository.getBills("BillsToRecive")
+        var value = 0.0
+        for(bills: Bills in list){
+            value += bills.valor
+        }
+        return value
+    }
+
+
 }
