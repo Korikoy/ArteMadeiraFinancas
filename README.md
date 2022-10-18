@@ -1,6 +1,6 @@
 # 📝 ArteMadeiraFinancas
 
-App de finanças para controle de gastos pessoal ou de empresas, serve para auxiliar no controle de gastos de uma entidade.
+App de finanças para controle de gastos pessoal ou corporativo.
 
 ## :rescue_worker_helmet: Instruções de uso
 
